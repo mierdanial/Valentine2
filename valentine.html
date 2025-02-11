@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day!</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+        h1 {
+            color: red;
+            font-size: 3em;
+            margin-top: 50px;
+        }
+        .heart {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 85%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            animation: heartbeat 1s infinite;
+        }
+        .heart:before, .heart:after {
+            content: "";
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart:before {
+            top: -50px;
+            left: 0;
+        }
+        .heart:after {
+            left: -50px;
+            top: 0;
+        }
+        @keyframes heartbeat {
+            0% { transform: translate(-50%, -50%) scale(1) rotate(45deg); }
+            50% { transform: translate(-50%, -50%) scale(1.2) rotate(45deg); }
+            100% { transform: translate(-50%, -50%) scale(1) rotate(45deg); }
+        }
+        p {
+            font-size: 1.5em;
+            color: darkred;
+            margin-top: 20px;
+        }
+        .buttons {
+            margin-top: 30px;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .yes {
+            background-color: red;
+            color: white;
+        }
+        .no {
+            background-color: white;
+            color: red;
+            position: absolute;
+        }
+        .cat-gif {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function moveNoButton() {
+            var btn = document.getElementById("noButton");
+            var x = Math.random() * (window.innerWidth - 100);
+            var y = Math.random() * (window.innerHeight - 50);
+            btn.style.left = x + "px";
+            btn.style.top = y + "px";
+        }
+        function sayYes() {
+            document.body.innerHTML = `
+                <h1>Yay! You said Yes! 💖</h1>
+                <p>I love you so much sayang! Can't wait to celebrate together! 💕</p>
+                <div class='heart'></div>
+                <div class='cat-gif'>
+                    <img src='https://media.giphy.com/media/J93sVmfYBtsRi/giphy.gif' alt='Cute cat gif'>
+                </div>
+            `;
+        }
+    </script>
+</head>
+<body>
+    <h1>Happy Valentine's Day, My Love Yasmin! ❤️</h1>
+    <div class="heart"></div>
+    <p>You make feel so in love with you! 💕</p>
+    <p>I'm so lucky to have you in my life! 💖</p>
+    <h2>Will you be my Valentine? 💘</h2>
+    <div class="buttons">
+        <button class="yes" onclick="sayYes()">Yes</button>
+        <button class="no" id="noButton" onclick="moveNoButton()">No</button>
+    </div>
+    <div class="cat-gif">
+        <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Cute cat gif">
+    </div>
+</body>
+</html>
